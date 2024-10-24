@@ -1,14 +1,15 @@
 ---
-const { class: className } = Astro.props;
+const { class: className, cursor = false } = Astro.props;
 
 interface Props {
     class?: string;
+    cursor?: boolean;
 }
 ---
 
 <span class:list={["font-mono font-bold lowercase", className]}>
     <slot />
-    <span class="cursor">_</span>
+    {cursor && <span class="cursor">_</span>}
 </span>
 
 <style>

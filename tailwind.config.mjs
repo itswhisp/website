@@ -20,6 +20,7 @@ export default {
                 grid: "url(/img/bg-grid.svg)",
             },
             fontFamily: {
+                sans: ["Host Grotesk", "Inter", "Helvetica Neue", "sans-serif"],
                 display: ["Medium", "Inter", "Helvetica Neue", "sans-serif"],
                 mono: ["Geist Mono", "monospace"],
             },

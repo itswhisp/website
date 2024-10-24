@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import ProfilePicture from "@components/ProfilePicture.astro";
 import Parallax from "@components/Parallax.astro";
-import Link from "@components/Link.astro";
 import Age from "@components/Age.astro";
 ---
 
@@ -26,9 +25,16 @@ import Age from "@components/Age.astro";
                     <Age /> y.o, web dev @ costa rica
                     <Icon class="inline" name="fluent:arrow-down-16-filled" />
                     <br />
-                    <Link class="hover:text-white" href="#about">about</Link>
-                    <Link class="hover:text-white" href="#socials">socials</Link
-                    >
+                    <a
+                        class="inline-block font-mono underline hover:text-white hover:no-underline"
+                        href="#about">
+                        about
+                    </a>
+                    <a
+                        class="inline-block font-mono underline hover:text-white hover:no-underline"
+                        href="#socials">
+                        socials
+                    </a>
                 </span>
             </Parallax>
         </div>

@@ -2,17 +2,54 @@
 const { title } = Astro.props;
 
 interface Props {
-    title: string;
+    title?: string;
 }
 ---
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+
+        <!-- Primary Meta Tags -->
+        <title>{title && `${title} :`} whisp's personal website</title>
+        <meta
+            name="title"
+            content={`${title && `${title} :`} whisp's personal website`}
+        />
+        <meta name="description" content="my small corner in the web!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://whisp.is-a.dev/" />
+        <meta
+            property="og:title"
+            content={`${title && `${title} : `} whisp's personal website`}
+        />
+
+        <meta property="og:description" content="my small corner in the web!" />
+        <meta
+            property="og:image"
+            content="https://whisp.is-a.dev/preview.gif"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://whisp.is-a.dev/" />
+        <meta
+            property="twitter:title"
+            content={`${title && `${title} : `} whisp's personal website`}
+        />
+
+        <meta
+            property="twitter:description"
+            content="my small corner in the web!"
+        />
+
+        <meta
+            property="twitter:image"
+            content="https://whisp.is-a.dev/preview.gif"
+        />
     </head>
     <body class="overflow-x-hidden bg-black text-white">
         <slot />
@@ -22,6 +59,12 @@ interface Props {
             src: url("/fonts/Medium.woff2") format("woff2");
             font-family: "Medium";
             font-display: block;
+        }
+
+        @font-face {
+            src: url("/fonts/HostGrotesk-Variable.ttf") format("truetype");
+            font-family: "Host Grotesk";
+            font-display: swap;
         }
 
         @font-face {

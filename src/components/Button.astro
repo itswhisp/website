@@ -10,7 +10,7 @@ const {
 
 interface Props extends HTMLAttributes<"a"> {
     /**
-     * Name for an icon to show in the card
+     * Name for an icon to show before the label
      * @see https://icon-sets.iconify.design
      * @see https://github.com/natemoo-re/astro-icon
      */
@@ -27,6 +27,6 @@ interface Props extends HTMLAttributes<"a"> {
         hover:text-black hover:outline-white focus-visible:outline-blue-400`,
         className,
     ]}>
-    <Icon class="inline size-[1.2em]" name={icon} />
+    {icon && <Icon class="inline size-[1.2em]" name={icon} />}
     <slot />
 </a>

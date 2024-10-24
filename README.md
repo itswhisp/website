@@ -1,5 +1,9 @@
 # whisp's personal website
 
-made with astro or something idk
+"my small corner of the internet" is what everyone else says so maybe i should too
+
+# osana reimu
+
+osana reimu
 
 ![](.github/reimu.png)

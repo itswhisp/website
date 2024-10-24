@@ -1,7 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+import Button from "@components/Button.astro";
+import Title from "@components/Title.astro";
 
-const { icon } = Astro.props;
+const { icon, title, buttons } = Astro.props;
 
 interface Props {
     /**
@@ -10,14 +12,51 @@ interface Props {
      * @see https://github.com/natemoo-re/astro-icon
      */
     icon?: string;
+
+    /** A title to use for the card */
+    title: string;
+
+    /** An array of buttons to show in the card */
+    buttons?: IButton[];
+}
+
+interface IButton {
+    /**
+     * Name for an icon to show before the label
+     * @see https://icon-sets.iconify.design
+     * @see https://github.com/natemoo-re/astro-icon
+     */
+    icon?: string;
+
+    /** Name for an icon to show before the label */
+    text: string;
+
+    /** The url the button will point to */
+    href: string;
 }
 ---
 
 <div
-    class="flex w-96 flex-grow flex-row gap-4 rounded-xl bg-black/60 bg-noise px-6 py-4
-        outline outline-1 outline-white/30 backdrop-blur-lg">
+    class="flex w-96 flex-grow flex-row gap-4 rounded-xl bg-black/60 bg-noise p-6 outline
+        outline-1 outline-white/30 backdrop-blur-lg">
     {icon && <Icon name={icon} class="min-h-8 min-w-8 translate-y-1" />}
-    <div>
-        <slot />
+    <div class="flex flex-col justify-between gap-4">
+        <div>
+            <Title>{title}</Title>
+            <p class="text-lg opacity-90">
+                <slot />
+            </p>
+        </div>
+        {
+            buttons && (
+                <div class="flex flex-row flex-wrap gap-4">
+                    {buttons.map((btn: IButton) => (
+                        <Button icon={btn.icon} href={btn.href} target="_blank">
+                            {btn.text}
+                        </Button>
+                    ))}
+                </div>
+            )
+        }
     </div>
 </div>
