@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import ProfilePicture from "@components/ProfilePicture.astro";
+import Parallax from "@components/Parallax.astro";
+import Link from "@components/Link.astro";
+import Age from "@components/Age.astro";
+---
+
+<div class="flex h-[90svh] select-none flex-col justify-center ~px-8/20">
+    <div
+        class="hero flex w-full flex-col items-center justify-between gap-10 md:-translate-y-10
+            md:flex-row-reverse">
+        <Parallax speed={2}>
+            <ProfilePicture class="~size-48/80 md:mr-4 lg:mr-12" />
+        </Parallax>
+        <div class="text-center md:text-start">
+            <Parallax>
+                <h1
+                    class="bg-gradient-to-b from-white to-white/90 bg-clip-text font-display
+                        text-transparent ~text-5xl/8xl">
+                    ItsWhisp
+                </h1>
+            </Parallax>
+            <Parallax speed={0.8}>
+                <span class="font-mono text-white/60 ~text-lg/2xl">
+                    <Age /> y.o, web dev @ costa rica
+                    <Icon class="inline" name="fluent:arrow-down-16-filled" />
+                    <br />
+                    <Link class="hover:text-white" href="#about">about</Link>
+                    <Link class="hover:text-white" href="#socials">socials</Link
+                    >
+                </span>
+            </Parallax>
+        </div>
+    </div>
+</div>

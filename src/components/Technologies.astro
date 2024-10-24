@@ -1,0 +1,52 @@
+---
+import Button from "@components/Button.astro";
+import Title from "@components/Title.astro";
+import Card from "@components/Card.astro";
+---
+
+<div class="flex w-full flex-col justify-center gap-4">
+    <div class="flex w-full flex-row flex-wrap justify-center gap-8 ~px-8/32">
+        <Card icon="skill-icons:astro">
+            <Title>Astro</Title>
+            <p class="text-lg opacity-90">
+                Static site generator used for this website!
+            </p>
+            <Button class="mt-2" href="https://astro.build/" target="_blank">
+                Website
+            </Button>
+        </Card>
+        <Card icon="skill-icons:svelte">
+            <Title>Svelte</Title>
+            <p class="text-lg opacity-90">Reactive web UI framework</p>
+            <Button class="mt-2" href="https://svelte.dev/" target="_blank">
+                Website
+            </Button>
+        </Card>
+        <Card icon="skill-icons:tailwindcss-dark">
+            <Title>Tailwind CSS</Title>
+            <p class="text-lg opacity-90">Utility-first CSS framework</p>
+            <Button
+                class="mt-2"
+                href="https://tailwindcss.com/"
+                target="_blank">
+                Website
+            </Button>
+        </Card>
+        <Card icon="skill-icons:arch-dark">
+            <Title>Arch Linux</Title>
+            <p class="text-lg opacity-90">A lightweight linux distro</p>
+            <Button class="mt-2" href="https://archlinux.org/" target="_blank">
+                Website
+            </Button>
+        </Card>
+        <Card icon="skill-icons:linux-dark">
+            <Title>Manjaro Linux</Title>
+            <p class="text-lg opacity-90">
+                An easy to use arch linux based distro, often my go-to
+            </p>
+            <Button class="mt-2" href="https://manjaro.org/" target="_blank">
+                Website
+            </Button>
+        </Card>
+    </div>
+</div>

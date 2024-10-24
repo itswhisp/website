@@ -1,0 +1,105 @@
+---
+import Layout from "@layout/Layout.astro";
+
+import Technologies from "@components/Technologies.astro";
+import Socials from "@components/Socials.astro";
+import Title from "@components/Title.astro";
+import Hero from "@components/Hero.astro";
+import Card from "@components/Card.astro";
+import Age from "@components/Age.astro";
+---
+
+<Layout title="ItsWhisp">
+    <div
+        class="pointer-events-none h-full w-full bg-cover *:fixed *:-z-10 *:h-full *:w-full">
+        <div class="bg-hero bg-cover"></div>
+        <div
+            class="bg-grid scale-110 animate-[gridScroll_1s_linear_infinite] opacity-0">
+        </div>
+    </div>
+    <Hero />
+    <div class="mb-8 flex flex-col gap-12">
+        <div
+            id="about"
+            class="flex w-full scroll-mt-64 flex-row flex-wrap justify-center gap-8 ~px-8/32">
+            <Card icon="fluent:person-16-filled">
+                <Title>About me</Title>
+                <p class="flex-shrink-0 text-lg opacity-90">
+                    Hi there, I'm whisp! A <Age /> y.o. from Costa Rica who likes
+                    messing around with computers and coding, currently focusing
+                    on web dev
+                </p>
+            </Card>
+            <Card icon="fluent:design-ideas-16-filled">
+                <Title>Interests</Title>
+                <p class="flex-shrink-0 text-lg opacity-90">
+                    Some of the stuff I'm into is tech in general, coding and
+                    UI/UX design, I also play games sometimes and enjoy
+                    listening to music
+                </p>
+            </Card>
+        </div>
+        <div class="text-center">
+            <Title class:list={"text-3xl"}>Technologies</Title>
+            <p class="mt-2 text-balance text-lg opacity-90">
+                Some technologies and tools i have used as a developer
+            </p>
+        </div>
+        <Technologies />
+        <div class="text-center">
+            <Title class:list={"text-3xl"}>Socials & links</Title>
+            <p
+                id="socials"
+                class="mt-2 scroll-mt-32 text-balance text-lg opacity-90">
+                Places you can find me at or contact me!
+            </p>
+        </div>
+        <Socials />
+    </div>
+
+    <script>
+        import { gsap } from "gsap";
+        import { ScrollTrigger } from "gsap/ScrollTrigger";
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero", {
+            alpha: 0,
+            scale: 1.2,
+            translateY: 200,
+            scrollTrigger: {
+                scrub: true,
+                end: 600,
+            },
+        });
+
+        gsap.to(".bg-hero", {
+            alpha: 0,
+            scale: 1.2,
+            scrollTrigger: {
+                scrub: true,
+                end: 500,
+            },
+        });
+
+        gsap.to(".bg-grid", {
+            scale: 1,
+            alpha: 0.08,
+            scrollTrigger: {
+                scrub: true,
+                start: 200,
+            },
+        });
+    </script>
+
+    <style>
+        @keyframes gridScroll {
+            from {
+                background-position: 20px 0;
+            }
+
+            to {
+                background-position: 0 20px;
+            }
+        }
+    </style>
+</Layout>

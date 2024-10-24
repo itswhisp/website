@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+const {
+    icon = "fluent:open-16-filled",
+    class: className,
+    ...attr
+} = Astro.props;
+
+interface Props extends HTMLAttributes<"a"> {
+    /**
+     * Name for an icon to show in the card
+     * @see https://icon-sets.iconify.design
+     * @see https://github.com/natemoo-re/astro-icon
+     */
+    icon?: string;
+    class?: string;
+}
+---
+
+<a
+    {...attr}
+    class:list={[
+        `flex w-fit items-center gap-2 rounded-lg px-4 py-2 font-mono lowercase outline
+        outline-2 outline-white/30 transition-all duration-200 hover:bg-white hover:px-6
+        hover:text-black hover:outline-white focus-visible:outline-blue-400`,
+        className,
+    ]}>
+    <Icon class="inline size-[1.2em]" name={icon} />
+    <slot />
+</a>

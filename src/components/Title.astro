@@ -1,0 +1,32 @@
+---
+const { class: className } = Astro.props;
+
+interface Props {
+    class?: string;
+}
+---
+
+<span class:list={["font-mono font-bold lowercase", className]}>
+    <slot />
+    <span class="cursor">_</span>
+</span>
+
+<style>
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .cursor {
+        animation: blink 0.9s step-start infinite;
+    }
+</style>

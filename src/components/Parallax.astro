@@ -1,0 +1,36 @@
+---
+const { speed = 1 } = Astro.props;
+
+interface Props {
+    /** The speed for the parallax effect, by default 1 */
+    speed?: number;
+}
+---
+
+<div class="parallax" data-speed={speed}>
+    <slot />
+</div>
+
+<script>
+    const elements = document.querySelectorAll(".parallax");
+    if (matchMedia("(hover:hover)").matches) {
+        window.addEventListener("mousemove", event => {
+            elements.forEach(el => {
+                const element = el as HTMLElement;
+                const x =
+                    ((window.innerWidth - event.pageX) / 90) *
+                    (Number(element.dataset.speed) * 2);
+                const y =
+                    ((window.innerHeight - event.pageY) / 90) *
+                    (Number(element.dataset.speed) * 2);
+                element.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
+    }
+</script>
+
+<style>
+    .parallax {
+        transition: transform 0.5s ease-out;
+    }
+</style>

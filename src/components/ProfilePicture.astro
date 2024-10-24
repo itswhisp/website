@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import pfp from "@assets/pfp.jpg";
+
+const { class: className } = Astro.props;
+
+interface Props {
+    class?: string;
+}
+---
+
+<div
+    class:list={[
+        `child-component aspect-square overflow-hidden rounded-full outline outline-2
+        outline-white/50`,
+        className,
+    ]}>
+    <Image src={pfp} alt="ItsWhisp Profile Picture" />
+</div>

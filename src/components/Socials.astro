@@ -1,0 +1,60 @@
+---
+import Button from "@components/Button.astro";
+import Title from "@components/Title.astro";
+import Card from "@components/Card.astro";
+---
+
+<div class="flex w-full flex-col justify-center gap-4">
+    <div class="flex w-full flex-row flex-wrap justify-center gap-8 ~px-8/32">
+        <Card icon="skill-icons:twitter">
+            <Title>Twitter</Title>
+            <p class="text-lg opacity-90">
+                Currently not much activity here, but i use it sometimes
+            </p>
+            <Button
+                class="mt-2"
+                href="https://twitter.com/ww_whisp"
+                target="_blank">
+                @ww_whisp
+            </Button>
+        </Card>
+        <Card icon="skill-icons:github-dark">
+            <Title>GitHub</Title>
+            <p class="text-lg opacity-90">
+                Where you can explore my public projects at
+            </p>
+            <Button
+                class="mt-2"
+                href="https://github.com/itswhisp"
+                target="_blank">
+                @itswhisp
+            </Button>
+        </Card>
+        <Card icon="skill-icons:discord">
+            <Title>Discord</Title>
+            <p class="text-lg opacity-90">
+                If you want to talk with me, you can add me on discord as
+                <strong>@ww_whisp</strong>!
+            </p>
+            <Button
+                class="mt-2"
+                href="https://discordapp.com/app"
+                target="_blank">
+                Open Discord app
+            </Button>
+        </Card>
+        <Card icon="fluent:mail-16-filled">
+            <Title>Email</Title>
+            <p class="text-lg opacity-90">
+                If you want to reach out, contact me through my personal email!
+            </p>
+            <Button
+                class="mt-2"
+                icon="fluent:send-16-filled"
+                href="mailto:ag.whisp@gmail.com"
+                target="_blank">
+                ag.whisp@gmail.com
+            </Button>
+        </Card>
+    </div>
+</div>

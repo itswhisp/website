@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { icon } = Astro.props;
+
+interface Props {
+    /**
+     * Name for an icon to show in the card
+     * @see https://icon-sets.iconify.design
+     * @see https://github.com/natemoo-re/astro-icon
+     */
+    icon?: string;
+}
+---
+
+<div
+    class="flex w-96 flex-grow flex-row gap-4 rounded-xl bg-black/60 bg-noise px-6 py-4
+        outline outline-1 outline-white/30 backdrop-blur-lg">
+    {icon && <Icon name={icon} class="min-h-8 min-w-8 translate-y-1" />}
+    <div>
+        <slot />
+    </div>
+</div>

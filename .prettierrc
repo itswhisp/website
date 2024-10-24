@@ -1,0 +1,14 @@
+{
+    "semi": true,
+    "tabWidth": 4,
+    "singleQuote": false,
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "quoteProps": "consistent",
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss",
+        "prettier-plugin-classnames",
+        "prettier-plugin-merge"
+    ]
+}
